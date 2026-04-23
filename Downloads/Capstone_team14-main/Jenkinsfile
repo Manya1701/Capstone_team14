@@ -1,0 +1,33 @@
+pipeline {
+  agent any
+
+  tools {
+    nodejs 'NodeJS-20'
+  }
+
+  stages {
+
+    stage('Install Backend') {
+      steps {
+        dir('backend') {
+          bat 'npm ci'
+        }
+      }
+    }
+
+    stage('Install Frontend') {
+      steps {
+        dir('frontend') {
+          bat 'npm ci'
+        }
+      }
+    }
+
+    stage('Docker Build') {
+      steps {
+        bat 'docker-compose build'
+      }
+    }
+
+  }
+}
