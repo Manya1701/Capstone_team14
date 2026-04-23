@@ -1,10 +1,10 @@
-# 🛡️ Port Security Monitoring & Access Control System
+#  Port Security Monitoring & Access Control System
 
 A full-stack MERN + Docker cybersecurity dashboard for real-time port scanning, firewall management, alert detection, and audit logging.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 port-security/
@@ -57,7 +57,7 @@ port-security/
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Option 1 — Docker (Recommended)
 
@@ -144,7 +144,7 @@ docker run -d -p 27017:27017 mongo:6
 
 ---
 
-## ⚡ Real-time Events (Socket.io)
+##  Real-time Events (Socket.io)
 
 | Event             | Payload                              |
 |-------------------|--------------------------------------|
@@ -157,20 +157,20 @@ docker run -d -p 27017:27017 mongo:6
 
 ---
 
-## 🔐 Risk Database
+##  Risk Database
 
 The system has 50+ known ports pre-classified:
 
 | Risk Level | Examples                              |
 |-----------|----------------------------------------|
-| 🔴 Critical | 23 (Telnet), 445 (SMB), 3389 (RDP), 5900 (VNC), 6379 (Redis), 27017 (MongoDB) |
-| 🟠 High    | 21 (FTP), 1433 (MS-SQL), 3306 (MySQL), 514 (RSH) |
-| 🟡 Medium  | 22 (SSH), 80 (HTTP), 25 (SMTP), 53 (DNS) |
-| 🟢 Low     | 443 (HTTPS), 587 (SMTP TLS), 993 (IMAPS) |
+|  Critical | 23 (Telnet), 445 (SMB), 3389 (RDP), 5900 (VNC), 6379 (Redis), 27017 (MongoDB) |
+|  High    | 21 (FTP), 1433 (MS-SQL), 3306 (MySQL), 514 (RSH) |
+|  Medium  | 22 (SSH), 80 (HTTP), 25 (SMTP), 53 (DNS) |
+|  Low     | 443 (HTTPS), 587 (SMTP TLS), 993 (IMAPS) |
 
 ---
 
-## 🐳 Docker Services
+##  Docker Services
 
 | Container     | Image          | Port  | Role                  |
 |--------------|----------------|-------|-----------------------|
@@ -182,7 +182,7 @@ The system has 50+ known ports pre-classified:
 
 ---
 
-## 🎯 Features
+##  Features
 
 - **Port Scanner** — Nmap integration with real parsing + simulated mode for demo
 - **Risk Detection** — Auto-classifies ports as Low / Medium / High / Critical
@@ -194,7 +194,7 @@ The system has 50+ known ports pre-classified:
 
 ---
 
-## ⚠️ Notes for Viva / Interview
+##  Notes for Viva / Interview
 
 1. **iptables** requires root / `NET_ADMIN` capability — handled by Docker config
 2. **nmap** requires `NET_RAW` — also handled by Docker
@@ -203,7 +203,7 @@ The system has 50+ known ports pre-classified:
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Layer      | Technology                          |
 |------------|-------------------------------------|
