@@ -194,14 +194,6 @@ The system has 50+ known ports pre-classified:
 
 ---
 
-##  Notes for Viva / Interview
-
-1. **iptables** requires root / `NET_ADMIN` capability — handled by Docker config
-2. **nmap** requires `NET_RAW` — also handled by Docker
-3. In `simulate` mode, demo data is used — no nmap/iptables needed (great for demo)
-4. Rules are stored in MongoDB even if iptables fails — provides audit trail regardless
-
----
 
 ##  Tech Stack
 
