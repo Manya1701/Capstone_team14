@@ -1,0 +1,137 @@
+.alerts-page { animation: fadeIn 0.3s ease; }
+
+.page-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; gap: 12px; flex-wrap: wrap; }
+.page-title { font-family: var(--font-display); font-size: 24px; font-weight: 800; color: var(--text-primary); }
+.page-sub { color: var(--text-secondary); font-size: 12px; margin-top: 4px; letter-spacing: 1px; }
+.card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+
+.ack-all-btn {
+  padding: 9px 18px;
+  background: var(--accent-green-dim);
+  border: 1px solid var(--accent-green)50;
+  color: var(--accent-green);
+  border-radius: 7px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 1px;
+}
+.ack-all-btn:hover { background: var(--accent-green); color: #000; }
+
+.alert-filters { display: flex; gap: 8px; margin-bottom: 18px; }
+.af-btn {
+  padding: 7px 16px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.af-btn:hover, .af-btn.active {
+  background: var(--accent-cyan-dim);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+.alert-cards { display: flex; flex-direction: column; gap: 12px; }
+
+.alert-card {
+  transition: border-color 0.2s, opacity 0.2s;
+  border-left-width: 4px;
+}
+.alert-card.acked { opacity: 0.55; }
+.alert-card--low      { border-left-color: var(--risk-low); }
+.alert-card--medium   { border-left-color: var(--risk-medium); }
+.alert-card--high     { border-left-color: var(--risk-high); }
+.alert-card--critical { border-left-color: var(--risk-critical); background: #ff386006; }
+
+.ac-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.ac-icon { font-size: 14px; }
+.ac-title { flex: 1; font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--text-primary); }
+.ac-acked-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--accent-green-dim);
+  color: var(--accent-green);
+  border: 1px solid var(--accent-green)40;
+  letter-spacing: 1px;
+}
+
+.ac-message {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.ac-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  margin-bottom: 12px;
+}
+
+.ac-actions { display: flex; gap: 8px; }
+
+.ac-btn-ack {
+  padding: 6px 14px;
+  background: var(--accent-green-dim);
+  border: 1px solid var(--accent-green)40;
+  color: var(--accent-green);
+  border-radius: 5px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 1px;
+}
+.ac-btn-ack:hover { background: var(--accent-green); color: #000; }
+
+.ac-btn-del {
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 5px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 1px;
+}
+.ac-btn-del:hover { border-color: var(--accent-red); color: var(--accent-red); }
+
+.alerts-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.toast {
+  position: fixed; bottom: 28px; right: 28px;
+  padding: 12px 20px; border-radius: 8px;
+  font-family: var(--font-mono); font-size: 12px;
+  z-index: 999; animation: fadeIn 0.3s ease;
+  border: 1px solid; max-width: 360px;
+}
+.toast--info    { background: var(--bg-card); border-color: var(--accent-cyan);   color: var(--accent-cyan); }
+.toast--success { background: var(--bg-card); border-color: var(--accent-green);  color: var(--accent-green); }
+.toast--warning { background: var(--bg-card); border-color: var(--accent-orange); color: var(--accent-orange); }
+.toast--error   { background: var(--bg-card); border-color: var(--accent-red);    color: var(--accent-red); }
