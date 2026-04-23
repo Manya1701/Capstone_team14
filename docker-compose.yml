@@ -1,0 +1,56 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:6
+    container_name: psm_mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: port_security
+    networks:
+      - psm_network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: psm_backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/port_security
+      - PORT=5000
+      - NODE_ENV=production
+    depends_on:
+      - mongodb
+    networks:
+      - psm_network
+    # Required for nmap and iptables access
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: psm_frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - psm_network
+
+volumes:
+  mongo_data:
+
+networks:
+  psm_network:
+    driver: bridge
